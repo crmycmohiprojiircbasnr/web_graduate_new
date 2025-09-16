@@ -1,0 +1,207 @@
+/* Layout chính: sidebar + nội dung */
+.main-layout {
+    display: flex;
+    min-height: 80vh;
+}
+
+.sidebar {
+    width: 180px;
+    background: #e7f5ff;
+    padding: 30px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.04);
+}
+.sidebar button {
+    margin: 0;
+    padding: 12px 10px;
+    border: none;
+    background: #0077cc;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 1em;
+    transition: 0.3s;
+}
+.sidebar button:hover {
+    background: #005fa3;
+}
+
+.photo-grid {
+    flex: 1;
+}
+/* Grid layout cho các photo-card */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+}
+
+.photo-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    overflow: hidden;
+    cursor: pointer;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+}
+.photo-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+.card-img {
+    width: 10%;
+    max-width: 180px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.card-desc {
+    font-size: 1em;
+    color: #333;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 180px;
+}
+
+/* Popup hiển thị ảnh lớn và mô tả đầy đủ */
+.photo-popup {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.popup-content {
+    background: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    position: relative;
+    min-width: 350px;
+    max-width: 700px;
+}
+.popup-img {
+    width: 80px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.popup-desc {
+    font-size: 1.1em;
+    color: #222;
+    max-width: 300px;
+}
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 18px;
+    font-size: 2em;
+    color: #888;
+    cursor: pointer;
+}
+/* Header layout */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #f9fcff;
+    padding: 10px 20px;
+    color: rgb(52, 47, 47);
+    height: 60px;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+}
+.logo-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 10%;
+    margin-right: 10px;
+}
+.logo-text {
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: "Segoe UI";
+    color: rgb(52, 47, 47);
+}
+
+/* Search bar */
+.search-bar {
+    flex: 1;
+    text-align: center;
+}
+.search-bar input {
+    width: 60%;
+    padding: 8px;
+    border-radius: 5px;
+    border: 0.5px solid #ccc;
+    font-size: 14px;
+    color: rgb(52, 47, 47);
+    background: #f9fcff;
+}
+
+/* Nav dọc bên phải */
+nav {
+    /* top: 60px; */
+    left: 0;
+    height: 100%;
+    width: 150px;
+    background: #f9fcff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50px;
+}
+
+/* Style nút */
+nav button {
+    margin: 10px 0;
+    padding: 10px 15px;
+    border: 0.5px solid #ccc;
+    background: #ccc;
+    color: rgb(52, 47, 47);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+    width: 80px;
+    overflow: break;
+    font-size: 12px;
+}
+
+nav button:hover {
+    background: #f9fcff;
+    color: rgb(52, 47, 47);
+}
+
+/* Actions (nút bên phải) */
+.actions .add-btn {
+    padding: 8px 12px;
+    border: none;
+    background: #f9fcff;
+    color: rgb(52, 47, 47);
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.actions .add-btn:hover {
+    background: #f9fcff;
+    color: rgb(52, 47, 47);
+}

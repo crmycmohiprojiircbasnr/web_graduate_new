@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Album Tốt Nghiệp</title>
+  <link rel="stylesheet" href="style.css"> <!-- gọi file CSS -->
+</head>
+<body>
+
+  <header>
+    <!-- <h1>Album Tốt Nghiệp</h1> -->
+
+    <!-- div là khối chứa thành phần, gắn class để format bên css file -->
+    <div class = "logo">
+        <!-- alt là text hiển thị khi không tải được ảnh -->
+        <img src="resource/logo.jpg" alt="Logo" class="logo-img">
+        
+        <!-- span là text đằng sau ảnh logo -->
+        <span class="logo-text">
+            Album 
+        </span>
+    </div>
+
+    <div class="search-bar">
+        <!-- placeholder là text ẩn gợi ý -->
+        <input type="text" placeholder="Tìm ảnh theo tên ...">
+    </div>
+
+    <div class="actions">
+        <button class="add-btn">Thêm ảnh</button>
+    </div>
+  </header>
+
+
+  <div class="main-layout">
+    <nav class="sidebar">
+      <button onclick="openTab('family')">Gia đình</button>
+      <button onclick="openTab('grad')">Tốt nghiệp</button>
+      <button onclick="openTab('love')">Người yêu</button>
+      <button onclick="openTab('school')">Thời đi học</button>
+    </nav>
+    <main class="photo-grid">
+      <div class="photo-card" onclick="openPhoto(this)">
+        <img src="resource/photo1.jpg" alt="Ảnh 1" class="card-img">
+        <div class="card-desc">Mô tả ngắn gọn cho ảnh 1, sẽ bị cắt nếu quá dài...</div>
+        <div class="card-full-desc" style="display:none;">Đây là mô tả đầy đủ cho ảnh 1. Có thể dài hơn và sẽ hiển thị khi mở rộng.</div>
+      </div>
+      <div class="photo-card" onclick="openPhoto(this)">
+        <img src="resource/photo2.jpg" alt="Ảnh 2" class="card-img">
+        <div class="card-desc">Mô tả ngắn gọn cho ảnh 2, sẽ bị cắt nếu quá dài...</div>
+        <div class="card-full-desc" style="display:none;">Đây là mô tả đầy đủ cho ảnh 2. Có thể dài hơn và sẽ hiển thị khi mở rộng.</div>
+      </div>
+      <!-- Thêm các photo-card khác tương tự -->
+    </main>
+  </div>
+
+    <!-- Popup hiển thị ảnh lớn và mô tả đầy đủ -->
+    <div id="photo-popup" class="photo-popup" style="display:none;">
+      <div class="popup-content">
+        <span class="close-btn" onclick="closePhoto()">&times;</span>
+        <img id="popup-img" src="" alt="" class="popup-img">
+        <div id="popup-desc" class="popup-desc"></div>
+      </div>
+    </div>
+
+    <!-- gọi file JS -->
+    <script src="script.js"></script>
+</body>
+</html>
